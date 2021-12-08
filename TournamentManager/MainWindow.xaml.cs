@@ -21,9 +21,17 @@ namespace TournamentManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Player> Players = new List<Player>();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btn_Load_Click(object sender, RoutedEventArgs e)
+        {
+            Players = SQLiteDataAccess.LoadPlayers();
+            DG_PlayerList.ItemsSource = Players;
+            //DG_PlayerList
         }
     }
 }
