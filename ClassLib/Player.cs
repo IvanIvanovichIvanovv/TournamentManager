@@ -8,27 +8,27 @@ namespace ClassLib
 {
     public class Player
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string surname { get; set; }
-        public int wins { get; set; } = 0;
-        public int loses { get; set; } = 0;
-        public int draws { get; set; } = 0;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public int Wins { get; set; } = 0;
+        public int Loses { get; set; } = 0;
+        public int Draws { get; set; } = 0;
 
         public Player(int ID,string name,string surname,int wins,int loses,int draws) 
         {
-            this.id = ID;
-            this.name = name;
-            this.surname = surname;
-            this.wins = wins;
-            this.loses = loses;
-            this.draws = draws;
+            this.Id = ID;
+            this.Name = name;
+            this.Surname = surname;
+            this.Wins = wins;
+            this.Loses = loses;
+            this.Draws = draws;
         }
         public Player() 
         {
-            this.id=0;
-            this.name = "John";
-            this.surname = "Doe";
+            this.Id=0;
+            this.Name = "John";
+            this.Surname = "Doe";
         }
     }
 }
