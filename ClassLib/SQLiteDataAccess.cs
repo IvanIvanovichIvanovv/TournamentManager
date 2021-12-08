@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-    internal class Tournament
+    public class SQLiteDataAccess
     {
-        int ID { get; set; }    
-        string Name { get; set; }
+        //public static List<Player>
     }
 }
