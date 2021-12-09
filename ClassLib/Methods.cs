@@ -28,6 +28,18 @@ namespace ClassLib
                 SQLiteDataAccess.UpdateMatch(match,Winner.ID);
             }
         }
+        public static void SetMatchDraw(Match match, Player player1, Player player2)  
+        {
+            if (CheckIfPlayerBelongsToMatch(match, player1.ID) && CheckIfPlayerBelongsToMatch(match, player2.ID))
+            {
+                player1.Draws += 1;
+                player2.Draws += 1;
+                match.WinnerID = 0;
+                SQLiteDataAccess.UpdatePlayerResults(player1);
+                SQLiteDataAccess.UpdatePlayerResults(player2);
+                SQLiteDataAccess.UpdateMatch(match,0);
+            }
+        }
         public static void roundRobin(List<Player> players, List<Match> matches,Tournament tournament)
         {
             for (int j = 0; j < players.Count() - 1; j++)
