@@ -8,20 +8,25 @@ namespace ClassLib
 {
     internal static class Methods
     {
-        public static void AddWin(Player player) 
+        public static bool CheckIfPlayerBelongsToMatch(Match match,int playerID) 
         {
-            player.Wins += 1;
-            SQLiteDataAccess.UpdatePlayerResults(player,player.Wins+1,player.Loses,player.Draws);
+            if (match.Player2ID == playerID || match.Player1ID == playerID)
+            {
+                return true;
+            }
+            else return false;
         }
-        public static void AddLose(Player player)
+        public static void SetMatchWinner(Match match,Player Winner, Player Loser) 
         {
-            player.Loses += 1;
-            SQLiteDataAccess.UpdatePlayerResults(player, player.Wins + 1, player.Loses, player.Draws);
-        }
-        public static void AddDraw(Player player)
-        {
-            player.Draws += 1;
-            SQLiteDataAccess.UpdatePlayerResults(player, player.Wins + 1, player.Loses, player.Draws);
+            if (CheckIfPlayerBelongsToMatch(match, Winner.ID) && CheckIfPlayerBelongsToMatch(match, Loser.ID)) 
+            {
+                Winner.Wins += 1;
+                Loser.Loses += 1;
+                match.WinnerID= Winner.ID;
+                SQLiteDataAccess.UpdatePlayerResults(Loser);
+                SQLiteDataAccess.UpdatePlayerResults(Winner);
+                SQLiteDataAccess.UpdateMatch(match,Winner.ID);
+            }
         }
         public static void roundRobin(List<Player> players, List<Match> matches,Tournament tournament)
         {
