@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-    internal class Tournament
+    public class Tournament
     {
         int ID { get; set; }    
         string Name { get; set; }

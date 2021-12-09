@@ -20,7 +20,15 @@ namespace ClassLib
                 return output.ToList();
             }
         }
-        public static void SavePlayer(Player player) 
+        public static List<Tournament> LoadTournaments()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<Tournament>("select * from Tournaments", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+        public static void AddPlayer(Player player) 
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
