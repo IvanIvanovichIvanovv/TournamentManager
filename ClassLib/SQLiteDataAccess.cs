@@ -28,6 +28,15 @@ namespace ClassLib
                 return output.ToList();
             }
         }
+        public static List<Match> LoadMatches()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<Match>("select * from Matches", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
         public static void AddPlayer(Player player) 
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))

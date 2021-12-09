@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-    internal class Match
+    public class Match
     {
         int id { get; set; }    
         int Player1ID { get; set; } 
