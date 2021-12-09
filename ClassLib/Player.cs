@@ -8,7 +8,7 @@ namespace ClassLib
 {
     public class Player
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public int Wins { get; set; } = 0;
@@ -17,7 +17,7 @@ namespace ClassLib
 
         public Player(int ID,string name,string surname,int wins,int loses,int draws) 
         {
-            this.Id = ID;
+            this.ID = ID;
             this.Name = name;
             this.Surname = surname;
             this.Wins = wins;
@@ -26,7 +26,7 @@ namespace ClassLib
         }
         public Player() 
         {
-            this.Id=0;
+            this.ID=0;
             this.Name = "John";
             this.Surname = "Doe";
         }
