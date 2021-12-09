@@ -36,12 +36,18 @@ namespace ClassLib
                 return output.ToList();
             }
         }
-
         public static void AddPlayer(Player player) 
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 cnn.Execute("insert into Players (Name, Surname, Wins, Loses, Draws) values (@Name, @Surname, @Wins, @Loses, @Draws)", player);
+            }
+        }
+        public static void AddTournament(Tournament tournament)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("insert into Tournaments (Name) values (@Name)", tournament);
             }
         }
 
