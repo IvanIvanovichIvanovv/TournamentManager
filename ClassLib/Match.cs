@@ -11,6 +11,7 @@ namespace ClassLib
         int id { get; set; }    
         int Player1ID { get; set; } 
         int Player2ID { get; set; }
+        int WinnerID { get; set; }
         int TournamentID { get; set; }  
 
     }
