@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentManager", "Tourna
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLib", "ClassLib\ClassLib.csproj", "{0C9AB9E3-3962-4869-A88A-2DA27E3EBEAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLib.Tests", "ClassLib.Tests\ClassLib.Tests.csproj", "{2C3496E9-65F5-493B-949B-75C2B6CD39D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0C9AB9E3-3962-4869-A88A-2DA27E3EBEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C9AB9E3-3962-4869-A88A-2DA27E3EBEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C9AB9E3-3962-4869-A88A-2DA27E3EBEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C3496E9-65F5-493B-949B-75C2B6CD39D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3496E9-65F5-493B-949B-75C2B6CD39D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3496E9-65F5-493B-949B-75C2B6CD39D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3496E9-65F5-493B-949B-75C2B6CD39D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
