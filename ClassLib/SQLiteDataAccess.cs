@@ -12,6 +12,7 @@ namespace ClassLib
 {
     public class SQLiteDataAccess
     {
+        #region Load Data
         public static List<Player> LoadPlayers() 
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) 
@@ -36,6 +37,8 @@ namespace ClassLib
                 return output.ToList();
             }
         }
+        #endregion
+        #region Add Data
         public static void AddPlayer(Player player) 
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -57,6 +60,8 @@ namespace ClassLib
                 cnn.Execute("insert into Matches (Player1ID, Player2ID, WinnerID, TournamentID) values (@Player1ID, @Player2ID, @WinnerID, @TournamentID)", match);
             }
         }
+        #endregion
+        #region Update Data
         public static void UpdateMatch(Match match,int WinnerID)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -71,6 +76,7 @@ namespace ClassLib
                 cnn.Execute($"UPDATE Players SET Wins={player.Wins}, Loses={player.Loses}, Draws={player.Draws} WHERE ID={player.ID}");
             }
         }
+        #endregion
         private static string LoadConnectionString(string id = "Default") 
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
