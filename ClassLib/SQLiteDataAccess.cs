@@ -57,6 +57,13 @@ namespace ClassLib
                 cnn.Execute("insert into Matches (Player1ID, Player2ID, WinnerID, TournamentID) values (@Player1ID, @Player2ID, @WinnerID, @TournamentID)", match);
             }
         }
+        public static void UpdateMatch(Match match,int WinnerID)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute($"UPDATE Matches SET WinnerID={WinnerID} WHERE ID={match.ID}");
+            }
+        }
         private static string LoadConnectionString(string id = "Default") 
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;

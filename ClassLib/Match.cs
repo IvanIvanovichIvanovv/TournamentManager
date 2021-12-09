@@ -8,7 +8,7 @@ namespace ClassLib
 {
     public class Match
     {
-        int ID { get; set; }    
+        public int ID { get; set; }    
         int Player1ID { get; set; } 
         int Player2ID { get; set; }
         int WinnerID { get; set; }
