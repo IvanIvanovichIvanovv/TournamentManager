@@ -1,5 +1,4 @@
-﻿using ClassLib;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,15 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TournamentManager
+namespace TournamentManager.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for PlayersMenu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PlayersMenu : Page
     {
-        List<Player> Players = new List<Player>();
-        public MainWindow()
+        public PlayersMenu()
         {
             InitializeComponent();
         }
