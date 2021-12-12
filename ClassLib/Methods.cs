@@ -40,9 +40,11 @@ namespace ClassLib
                 SQLiteDataAccess.UpdateMatch(match,0);
             }
         }
-        public static void CreatePlayer(string Name, string Surname) 
+        public static Player CreatePlayer(string Name, string Surname) 
         {
-
+            Player player = new Player(Name, Surname);
+            SQLiteDataAccess.AddPlayer(player);
+            return player;
         }
         public static void roundRobin(List<Player> players, List<Match> matches,Tournament tournament)
         {
