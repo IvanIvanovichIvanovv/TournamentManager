@@ -24,6 +24,11 @@ namespace ClassLib
             this.Loses = loses;
             this.Draws = draws;
         }
+        public Player(string Name, string Surname) 
+        {
+            this.Name = Name;
+            this.Surname = Surname;
+        }
         public Player() 
         {
             this.ID=0;

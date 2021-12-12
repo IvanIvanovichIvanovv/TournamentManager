@@ -40,6 +40,10 @@ namespace ClassLib
                 SQLiteDataAccess.UpdateMatch(match,0);
             }
         }
+        public static void CreatePlayer(string Name, string Surname) 
+        {
+
+        }
         public static void roundRobin(List<Player> players, List<Match> matches,Tournament tournament)
         {
             for (int j = 0; j < players.Count() - 1; j++)
