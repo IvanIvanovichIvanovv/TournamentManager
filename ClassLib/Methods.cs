@@ -61,8 +61,16 @@ namespace ClassLib
             {
                 SQLiteDataAccess.AddMatch(Matches[i]);
             }
-        } 
-        //public static void EditPlayerData(Player player, string Name,string Surname, int Wins, int Loses, int Draws)
+        }
+        public static void EditPlayerData(Player player, string Name, string Surname, int Wins, int Loses, int Draws) 
+        {
+            player.Name= Name;
+            player.Surname= Surname;    
+            player.Wins= Wins;  
+            player.Draws= Draws;
+            player.Loses= Loses;
+            SQLiteDataAccess.UpdatePlayer(player);
+        }
         public static void roundRobin(List<Player> players, List<Match> matches, Tournament tournament)
         {
             for (int j = 0; j < players.Count() - 1; j++)
