@@ -1,21 +1,18 @@
 ﻿using Dapper;
-using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClassLib
 {
     public class SQLiteDataAccess
     {
         #region Load Data
-        public static List<Player> LoadPlayers() 
+        public static List<Player> LoadPlayers()
         {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) 
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 var output = cnn.Query<Player>("select * from Players", new DynamicParameters());
                 return output.ToList();
@@ -37,9 +34,9 @@ namespace ClassLib
                 return output.ToList();
             }
         }
-        #endregion
+        #endregion 
         #region Add Data
-        public static void AddPlayer(Player player) 
+        public static void AddPlayer(Player player)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -62,7 +59,7 @@ namespace ClassLib
         }
         #endregion
         #region Update Data
-        public static void UpdateMatch(Match match,int WinnerID)
+        public static void UpdateMatch(Match match, int WinnerID)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -78,7 +75,7 @@ namespace ClassLib
         }
         //publis static void UpdatePlayerData(Player,)
         #endregion
-        private static string LoadConnectionString(string id = "Default") 
+        private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }

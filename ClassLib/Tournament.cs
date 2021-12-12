@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ClassLib
+﻿namespace ClassLib
 {
     public class Tournament
     {
-        public int ID { get; set; }    
+        public int ID { get; set; }
         public string Name { get; set; }
+        public Tournament(string Name) 
+        {
+            this.Name = Name; 
+        }
     }
 }

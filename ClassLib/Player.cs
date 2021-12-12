@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ClassLib
+﻿namespace ClassLib
 {
     public class Player
     {
@@ -15,7 +9,7 @@ namespace ClassLib
         public int Loses { get; set; } = 0;
         public int Draws { get; set; } = 0;
 
-        public Player(int ID,string name,string surname,int wins,int loses,int draws) 
+        public Player(int ID, string name, string surname, int wins, int loses, int draws)
         {
             this.ID = ID;
             this.Name = name;
@@ -24,14 +18,14 @@ namespace ClassLib
             this.Loses = loses;
             this.Draws = draws;
         }
-        public Player(string Name, string Surname) 
+        public Player(string Name, string Surname)
         {
             this.Name = Name;
             this.Surname = Surname;
         }
-        public Player() 
+        public Player()
         {
-            this.ID=0;
+            this.ID = 0;
             this.Name = "John";
             this.Surname = "Doe";
         }
