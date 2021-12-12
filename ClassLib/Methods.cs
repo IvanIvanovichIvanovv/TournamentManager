@@ -23,8 +23,8 @@ namespace ClassLib
                 Winner.Wins += 1;
                 Loser.Loses += 1;
                 match.WinnerID= Winner.ID;
-                SQLiteDataAccess.UpdatePlayerResults(Loser);
-                SQLiteDataAccess.UpdatePlayerResults(Winner);
+                SQLiteDataAccess.UpdatePlayer(Loser);
+                SQLiteDataAccess.UpdatePlayer(Winner);
                 SQLiteDataAccess.UpdateMatch(match,Winner.ID);
             }
         }
@@ -35,8 +35,8 @@ namespace ClassLib
                 player1.Draws += 1;
                 player2.Draws += 1;
                 match.WinnerID = 0;
-                SQLiteDataAccess.UpdatePlayerResults(player1);
-                SQLiteDataAccess.UpdatePlayerResults(player2);
+                SQLiteDataAccess.UpdatePlayer(player1);
+                SQLiteDataAccess.UpdatePlayer(player2);
                 SQLiteDataAccess.UpdateMatch(match,0);
             }
         }
@@ -46,6 +46,8 @@ namespace ClassLib
             SQLiteDataAccess.AddPlayer(player);
             return player;
         }
+        //public static void CreateTournament(string Name, List<Player> players) { } //utworzyc turniej i dodac do niego mecze z listy zawodnikow
+        //public static void EditPlayerData(Player player, string Name,string Surname, int Wins, int Loses, int Draws)
         public static void roundRobin(List<Player> players, List<Match> matches,Tournament tournament)
         {
             for (int j = 0; j < players.Count() - 1; j++)
