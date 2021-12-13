@@ -26,7 +26,7 @@ namespace ClassLib
                 return output.ToList();
             }
         }
-        public static List<Match> LoadMatches()
+        public static List<Match> LoadAllMatches()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
