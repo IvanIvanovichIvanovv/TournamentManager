@@ -9,6 +9,11 @@ namespace ClassLib
         public static List<Player> ChosenPlayers;
         public static List<Match> Matches;
         public static List<Tournament> Tournaments;
+        public static Tournament CurrentTournament;
+        public static void LoadPlayers() 
+        {
+            AllPlayers = SQLiteDataAccess.LoadPlayers();
+        }
         public static bool CheckIfPlayerBelongsToMatch(Match match, int playerID)
         {
             if (match.Player2ID == playerID || match.Player1ID == playerID)
@@ -47,7 +52,7 @@ namespace ClassLib
             SQLiteDataAccess.AddPlayer(player);
             return player;
         }
-        public static void CreateTournament(string Name, List<Player> players) //utworzyc turniej i dodac do niego mecze z listy zawodnikow
+        public static void CreateTournament(string Name, List<Player> players)
         {
             Tournaments.Clear();
             Matches.Clear();
@@ -56,7 +61,7 @@ namespace ClassLib
             SQLiteDataAccess.AddTournament(tournament);
 
             Tournaments = SQLiteDataAccess.LoadTournaments();
-            roundRobin(players, Matches, tournament);
+            RoundRobin(players, Matches, tournament);
             for (int i = 0; i < Matches.Count; i++) 
             {
                 SQLiteDataAccess.AddMatch(Matches[i]);
@@ -71,7 +76,7 @@ namespace ClassLib
             player.Loses= Loses;
             SQLiteDataAccess.UpdatePlayer(player);
         }
-        public static void roundRobin(List<Player> players, List<Match> matches, Tournament tournament)
+        public static void RoundRobin(List<Player> players, List<Match> matches, Tournament tournament)
         {
             for (int j = 0; j < players.Count() - 1; j++)
             {
@@ -87,7 +92,6 @@ namespace ClassLib
                         {
                             matches.Add(new Match(players[j + l].ID, players[j].ID, tournament.ID));
                         }
-
                     }
                 }
             }
