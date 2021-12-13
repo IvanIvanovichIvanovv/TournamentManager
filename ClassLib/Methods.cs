@@ -14,6 +14,10 @@ namespace ClassLib
         {
             AllPlayers = SQLiteDataAccess.LoadPlayers();
         }
+        public static void LoadTournaments() 
+        {
+            Tournaments=SQLiteDataAccess.LoadTournaments();
+        }
         public static bool CheckIfPlayerBelongsToMatch(Match match, int playerID)
         {
             if (match.Player2ID == playerID || match.Player1ID == playerID)
