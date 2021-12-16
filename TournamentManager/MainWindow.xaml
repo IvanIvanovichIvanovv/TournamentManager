@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TournamentManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="430">
     <Grid>
         <Button x:Name="btn_MainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="btn_MainMenu_Click"/>
         <Button x:Name="btn_PlayerMenu" Content="Players Menu" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Click="btn_PlayerMenu_Click"/>
-        <Button x:Name="btn_TournamentsMenu" Content="Tournaments Menu" HorizontalAlignment="Left" Margin="160,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_TournamentsMenu" Content="Tournaments Menu" HorizontalAlignment="Left" Margin="160,10,0,0" VerticalAlignment="Top" Click="btn_TournamentsMenu_Click"/>
         <Frame x:Name="frame_Main" Content="" Margin="0,30,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

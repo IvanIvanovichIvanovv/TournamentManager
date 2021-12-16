@@ -5,11 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TournamentManager.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="PlayersMenu">
+      d:DesignHeight="450"
+      Title="PlayersMenu" Width="424">
 
     <Grid Background="White">
-        <DataGrid x:Name="dg_PlayersMenu" Margin="0,0,538,0" SelectedIndex="0" CanUserAddRows="false" IsReadOnly="True" />
+        <DataGrid x:Name="dg_PlayersMenu" Margin="0,0,0,0" SelectedIndex="0" CanUserAddRows="false" IsReadOnly="True" HorizontalAlignment="Left" Width="246"/>
+        <Label Content="Create new player" HorizontalAlignment="Left" Margin="267,10,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="267,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Surname" HorizontalAlignment="Left" Margin="267,100,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_CreatePlayer_Name" HorizontalAlignment="Left" Margin="267,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_CreatePlayer_Surname" HorizontalAlignment="Left" Margin="267,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btn_CreatePlayer" Content="Create" HorizontalAlignment="Left" Margin="268,154,0,0" VerticalAlignment="Top" Click="btn_CreatePlayer_Click"/>
 
     </Grid>
 </Page>

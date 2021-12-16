@@ -8,5 +8,11 @@
         {
             this.Name = Name; 
         }
+        public Tournament(int ID, string Name) 
+        {
+            this.ID = ID;    
+            this.Name = Name;
+        }
+        public Tournament() { }
     }
 }

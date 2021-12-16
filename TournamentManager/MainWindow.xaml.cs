@@ -19,6 +19,7 @@ namespace TournamentManager
             InitializeComponent();
             frame_Main.Content = new MainMenu();
             Methods.LoadPlayers();
+            Methods.LoadTournaments();
             
         }
 
@@ -30,6 +31,11 @@ namespace TournamentManager
         private void btn_MainMenu_Click(object sender, RoutedEventArgs e)
         {
             frame_Main.Content = new MainMenu();
+        }
+
+        private void btn_TournamentsMenu_Click(object sender, RoutedEventArgs e)
+        {
+            frame_Main.Content=new TournamentsMenu();
         }
     }
 }

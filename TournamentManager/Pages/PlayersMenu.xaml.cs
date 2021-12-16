@@ -15,5 +15,13 @@ namespace TournamentManager.Pages
             InitializeComponent();
             dg_PlayersMenu.ItemsSource = Methods.AllPlayers;
         }
+
+        private void btn_CreatePlayer_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Methods.AllPlayers.Add(Methods.CreatePlayer(tb_CreatePlayer_Name.Text,tb_CreatePlayer_Surname.Text));
+            dg_PlayersMenu.ItemsSource = null;
+            Methods.LoadPlayers();
+            dg_PlayersMenu.ItemsSource=Methods.AllPlayers;
+        }
     }
 }
