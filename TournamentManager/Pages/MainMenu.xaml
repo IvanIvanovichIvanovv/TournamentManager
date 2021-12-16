@@ -8,7 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainMenu">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <DataGrid Margin="0,0,400,329"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="10,257,0,0" VerticalAlignment="Top" Height="183" Width="461" FontSize="48"/>
     </Grid>
 </Page>

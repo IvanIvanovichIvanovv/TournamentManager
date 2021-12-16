@@ -1,4 +1,7 @@
 ﻿using System.Windows.Controls;
+using ClassLib;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace TournamentManager.Pages
 {
@@ -10,6 +13,7 @@ namespace TournamentManager.Pages
         public PlayersMenu()
         {
             InitializeComponent();
+            dg_PlayersMenu.ItemsSource = Methods.AllPlayers;
         }
     }
 }

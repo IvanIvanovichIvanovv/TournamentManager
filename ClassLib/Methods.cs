@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace ClassLib
 {
-    internal static class Methods
+    public static class Methods
     {
         public static List<Player> AllPlayers;
         public static List<Player> ChosenPlayers;
@@ -49,10 +49,10 @@ namespace ClassLib
             {
                 player1.Draws += 1;
                 player2.Draws += 1;
-                match.WinnerID = 0;
+                match.WinnerID = 1;
                 SQLiteDataAccess.UpdatePlayer(player1);
                 SQLiteDataAccess.UpdatePlayer(player2);
-                SQLiteDataAccess.UpdateMatch(match, 0);
+                SQLiteDataAccess.UpdateMatch(match, 1);
             }
         }
         public static Player CreatePlayer(string Name, string Surname)
