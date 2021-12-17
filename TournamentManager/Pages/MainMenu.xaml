@@ -9,6 +9,12 @@
       Title="MainMenu">
 
     <Grid Background="White">
-        <DataGrid Margin="0,0,0,0" HorizontalAlignment="Left" Width="150"/>
+        <Button x:Name="btn_LoadTournament" Content="Load Tournament" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,40,0,0" Click="btn_LoadTournament_Click"/>
+        <Button x:Name="btn_Player1_win" Content="Player 1 win" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,40,0,0" Click="btn_Player1_win_Click"/>
+        <Button x:Name="btn_Draw" Content="Draw" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,62,0,0" Click="btn_Draw_Click"/>
+        <Button x:Name="btn_Player2_win" Content="Player 2 win" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,84,0,0" Click="btn_Player2_win_Click"/>
+        <ComboBox x:Name="CB_TournamentList" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,10,0,0" Width="100"/>
+        <Label Content="Result" Margin="200,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <DataGrid Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="450" CanUserAddRows="False" IsReadOnly="True" />
     </Grid>
 </Page>

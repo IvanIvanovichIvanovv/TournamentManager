@@ -9,7 +9,7 @@
       Title="PlayersMenu" Width="424">
 
     <Grid Background="White">
-        <DataGrid x:Name="dg_PlayersMenu" Margin="0,0,0,0" SelectedIndex="0" CanUserAddRows="false" IsReadOnly="True" HorizontalAlignment="Left" Width="246"/>
+        <DataGrid x:Name="dg_PlayersMenu" Margin="0,0,0,0" SelectedIndex="0" CanUserAddRows="false" IsReadOnly="True" HorizontalAlignment="Left" />
         <Label Content="Create new player" HorizontalAlignment="Left" Margin="267,10,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="267,46,0,0" VerticalAlignment="Top"/>
         <Label Content="Surname" HorizontalAlignment="Left" Margin="267,100,0,0" VerticalAlignment="Top"/>
