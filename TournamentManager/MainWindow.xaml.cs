@@ -1,10 +1,6 @@
-﻿using System.Windows;
+﻿using ClassLib;
+using System.Windows;
 using TournamentManager.Pages;
-using System.Windows.Shapes;
-using System.Windows.Navigation;
-using ClassLib;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace TournamentManager
 {
@@ -20,7 +16,7 @@ namespace TournamentManager
             frame_Main.Content = new MainMenu();
             Methods.LoadPlayers();
             Methods.LoadTournaments();
-            
+
         }
 
         private void btn_PlayerMenu_Click(object sender, RoutedEventArgs e)
@@ -35,7 +31,7 @@ namespace TournamentManager
 
         private void btn_TournamentsMenu_Click(object sender, RoutedEventArgs e)
         {
-            frame_Main.Content=new TournamentsMenu();
+            frame_Main.Content = new TournamentsMenu();
         }
     }
 }

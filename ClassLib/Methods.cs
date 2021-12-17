@@ -5,36 +5,36 @@ namespace ClassLib
 {
     public static class Methods
     {
-        public static List<Player> AllPlayers =new List<Player>();
-        public static List<Player> ChosenPlayers=new List<Player>();
-        public static List<Match> CurrentMatches=new List<Match>();
+        public static List<Player> AllPlayers = new List<Player>();
+        public static List<Player> ChosenPlayers = new List<Player>();
+        public static List<Match> CurrentMatches = new List<Match>();
         public static List<Match> Matches = new List<Match>();
-        public static List<Tournament> Tournaments=new List<Tournament>();
+        public static List<Tournament> Tournaments = new List<Tournament>();
         public static Tournament CurrentTournament;
-        public static void LoadPlayers() 
+        public static void LoadPlayers()
         {
             AllPlayers = SQLiteDataAccess.LoadPlayers();
         }
-        public static void LoadTournaments() 
+        public static void LoadTournaments()
         {
-            Tournaments=SQLiteDataAccess.LoadTournaments();
+            Tournaments = SQLiteDataAccess.LoadTournaments();
         }
-        public static void LoadMatches() 
+        public static void LoadMatches()
         {
             Matches = SQLiteDataAccess.LoadAllMatches();
         }
-        public static void AddPlayerToListWoDuplicates(List<Player> players,Player player) 
+        public static void AddPlayerToListWoDuplicates(List<Player> players, Player player)
         {
             int check = 0;
             for (int i = 0; i < players.Count; i++)
             {
-                if (players[i].ID==player.ID)
+                if (players[i].ID == player.ID)
                 {
                     check = 1;
                     break;
                 }
             }
-            if (check == 0) 
+            if (check == 0)
             {
                 players.Add(player);
             }
@@ -86,19 +86,19 @@ namespace ClassLib
             SQLiteDataAccess.AddTournament(tournament);
 
             LoadTournaments();
-            RoundRobin(players, CurrentMatches, Tournaments[Tournaments.Count-1]);
-            for (int i = 0; i < CurrentMatches.Count; i++) 
+            RoundRobin(players, CurrentMatches, Tournaments[Tournaments.Count - 1]);
+            for (int i = 0; i < CurrentMatches.Count; i++)
             {
                 SQLiteDataAccess.AddMatch(CurrentMatches[i]);
             }
         }
-        public static void EditPlayerData(Player player, string Name, string Surname, int Wins, int Loses, int Draws) 
+        public static void EditPlayerData(Player player, string Name, string Surname, int Wins, int Loses, int Draws)
         {
-            player.Name= Name;
-            player.Surname= Surname;    
-            player.Wins= Wins;  
-            player.Draws= Draws;
-            player.Loses= Loses;
+            player.Name = Name;
+            player.Surname = Surname;
+            player.Wins = Wins;
+            player.Draws = Draws;
+            player.Loses = Loses;
             SQLiteDataAccess.UpdatePlayer(player);
         }
         public static void RoundRobin(List<Player> players, List<Match> matches, Tournament tournament)

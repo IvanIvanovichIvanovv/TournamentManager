@@ -1,7 +1,5 @@
-﻿using System.Windows.Controls;
-using ClassLib;
-using System.Collections;
-using System.Collections.Generic;
+﻿using ClassLib;
+using System.Windows.Controls;
 
 namespace TournamentManager.Pages
 {
@@ -18,10 +16,10 @@ namespace TournamentManager.Pages
 
         private void btn_CreatePlayer_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Methods.AllPlayers.Add(Methods.CreatePlayer(tb_CreatePlayer_Name.Text,tb_CreatePlayer_Surname.Text));
+            Methods.AllPlayers.Add(Methods.CreatePlayer(tb_CreatePlayer_Name.Text, tb_CreatePlayer_Surname.Text));
             dg_PlayersMenu.ItemsSource = null;
             Methods.LoadPlayers();
-            dg_PlayersMenu.ItemsSource=Methods.AllPlayers;
+            dg_PlayersMenu.ItemsSource = Methods.AllPlayers;
         }
     }
 }
