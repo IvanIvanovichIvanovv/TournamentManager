@@ -5,11 +5,11 @@ namespace ClassLib
 {
     public static class Methods
     {
-        public static List<Player> AllPlayers;
-        public static List<Player> ChosenPlayers;
-        public static List<Match> CurrentMatches;
-        public static List<Match> Matches;
-        public static List<Tournament> Tournaments;
+        public static List<Player> AllPlayers =new List<Player>();
+        public static List<Player> ChosenPlayers=new List<Player>();
+        public static List<Match> CurrentMatches=new List<Match>();
+        public static List<Match> Matches = new List<Match>();
+        public static List<Tournament> Tournaments=new List<Tournament>();
         public static Tournament CurrentTournament;
         public static void LoadPlayers() 
         {
@@ -22,6 +22,22 @@ namespace ClassLib
         public static void LoadMatches() 
         {
             Matches = SQLiteDataAccess.LoadAllMatches();
+        }
+        public static void AddPlayerToListWoDuplicates(List<Player> players,Player player) 
+        {
+            int check = 0;
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i].ID==player.ID)
+                {
+                    check = 1;
+                    break;
+                }
+            }
+            if (check == 0) 
+            {
+                players.Add(player);
+            }
         }
         public static bool CheckIfPlayerBelongsToMatch(Match match, int playerID)
         {
@@ -69,8 +85,8 @@ namespace ClassLib
             Tournament tournament = new Tournament(Name);
             SQLiteDataAccess.AddTournament(tournament);
 
-            Tournaments = SQLiteDataAccess.LoadTournaments();
-            RoundRobin(players, CurrentMatches, tournament);
+            LoadTournaments();
+            RoundRobin(players, CurrentMatches, Tournaments[Tournaments.Count-1]);
             for (int i = 0; i < CurrentMatches.Count; i++) 
             {
                 SQLiteDataAccess.AddMatch(CurrentMatches[i]);

@@ -9,12 +9,12 @@
       Title="TournamentsMenu" Background="White">
 
     <Grid>
-        <DataGrid x:Name="dg_Tournaments" HorizontalAlignment="Left" Margin="0,0,0,0" Width="150" />
-        <DataGrid x:Name="dg_SelectedPlayers" HorizontalAlignment="Left" Margin="150,90,0,0" Width="280" Height="360" VerticalAlignment="Top" />
-        <ComboBox x:Name="CB_AllPlayers" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="280,41,0,0"/>
+        <DataGrid x:Name="dg_Tournaments" HorizontalAlignment="Left" Margin="0,0,0,0" Width="150" CanUserAddRows="false" IsReadOnly="True" />
+        <DataGrid x:Name="dg_SelectedPlayers" HorizontalAlignment="Left" Margin="150,90,0,0" Width="280" Height="360" VerticalAlignment="Top" CanUserAddRows="false" IsReadOnly="True" />
+        <ComboBox x:Name="CB_AllPlayers" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="280,41,0,0"/>
         <Label Content="Tournament Name" HorizontalAlignment="Left" Margin="155,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tb_TournamentName" HorizontalAlignment="Left" Margin="155,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btn_CreateTournament" Content="Create" HorizontalAlignment="Left" Margin="155,64,0,0" VerticalAlignment="Top" Click="btn_CreateTournament_Click"/>
-
+        <Button x:Name="btn_Add" Content="Add"  HorizontalAlignment="Left" Margin="375,66,0,0" VerticalAlignment="Top" Click="btn_Add_Click"/>
     </Grid>
 </Page>
